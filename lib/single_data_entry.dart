@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'data.dart';
 
+// ignore: must_be_immutable
 class SingleDataEntry extends StatelessWidget {
 
   QueryDocumentSnapshot doc;
@@ -40,6 +40,7 @@ class SingleDataEntry extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class SingleDataEntryBody extends StatefulWidget {
 
   QueryDocumentSnapshot doc;

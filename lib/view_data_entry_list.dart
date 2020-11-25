@@ -6,6 +6,7 @@ import 'package:wafy_updates/single_data_entry.dart';
 import 'data.dart';
 import 'edit_data_entry.dart';
 
+// ignore: must_be_immutable
 class ViewDataEntryList extends StatelessWidget {
 
   String fieldValue;
@@ -41,6 +42,7 @@ class ViewDataEntryList extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class ViewDataEntryListBody extends StatefulWidget {
 
   String fieldValue;

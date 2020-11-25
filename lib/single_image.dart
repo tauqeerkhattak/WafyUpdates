@@ -15,9 +15,9 @@ import 'package:gallery_saver/gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:share/share.dart';
-
 import 'data.dart';
 
+// ignore: must_be_immutable
 class SingleImageBody extends StatefulWidget {
 
   List <String> images;
@@ -54,6 +54,7 @@ class _SingleImageBodyState extends State<SingleImageBody> {
         return true;
       }
     }
+    return false;
   }
 
   Future<int> getNumberOfLikes (String postID) async {
@@ -69,6 +70,7 @@ class _SingleImageBodyState extends State<SingleImageBody> {
     return doc;
   }
 
+  // ignore: missing_return
   Future<DocumentSnapshot> getSpecificImageDocument (String url) async {
     var galleryCollectionReference = await FirebaseFirestore.instance.collection("Gallery").get();
     var listOfDocuments = galleryCollectionReference.docs;
@@ -80,6 +82,7 @@ class _SingleImageBodyState extends State<SingleImageBody> {
         return eachDocument;
       }
     }
+
   }
 
   @override

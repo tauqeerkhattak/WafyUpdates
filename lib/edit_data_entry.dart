@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'data.dart';
 
+// ignore: must_be_immutable
 class EditDataEntry extends StatelessWidget {
 
   QueryDocumentSnapshot doc;
@@ -39,6 +39,7 @@ class EditDataEntry extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class EditDataEntryBody extends StatefulWidget {
 
   QueryDocumentSnapshot doc;
@@ -692,7 +693,6 @@ class _EditDataEntryBodyState extends State<EditDataEntryBody> {
                       String mobile = mobileController.text;
                       String home = homeController.text;
                       String district = districtDropdown;
-                      String orbit = orbitDropdown;
                       _updateDataToFirebase(cic, studentName, batch, college, mobile, home, district, orbitToBeUploaded);
                       Navigator.pop(context);
                     }

@@ -1,12 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'data.dart';
 
+// ignore: must_be_immutable
 class SingleCollegeView extends StatelessWidget {
 
   QueryDocumentSnapshot snapshot;
@@ -42,6 +41,7 @@ class SingleCollegeView extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class SingleCollegeViewBody extends StatefulWidget {
 
   QueryDocumentSnapshot snapshot;

@@ -66,13 +66,14 @@ class PushNotificationsManager {
     if (message.containsKey('data')) {
       // Handle data message
       final dynamic data = message['data'];
+      print(data.toString());
     }
 
     if (message.containsKey('notification')) {
       // Handle notification message
       final dynamic notification = message['notification'];
+      print(notification.toString());
     }
-
     // Or do other work.
   }
 }

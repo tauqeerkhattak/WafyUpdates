@@ -5,9 +5,9 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'data.dart';
 
+// ignore: must_be_immutable
 class EditCollege extends StatelessWidget {
 
   QueryDocumentSnapshot snapshot;
@@ -43,6 +43,7 @@ class EditCollege extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class EditCollegesBody extends StatefulWidget {
 
   QueryDocumentSnapshot snapshot;

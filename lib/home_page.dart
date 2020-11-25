@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
     first = second = third = 0;
     String firstPost,secondPost,thirdPost;
     for (int i = 0;i < size;i++) {
-      DocumentSnapshot eachDocument = await listOfLikes[i];
+      DocumentSnapshot eachDocument = listOfLikes[i];
       List list = eachDocument.get("likedBy");
       if(list.length > first) {
         third = second;
@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
     print("First: $firstPost, Likes: $first");
     print("Second: $secondPost, Likes: $second");
     print("Third: $thirdPost, Likes: $third");
-    var galleryCollection = await FirebaseFirestore.instance.collection("Gallery");
+    var galleryCollection = FirebaseFirestore.instance.collection("Gallery");
     var firstDoc = await galleryCollection.doc(firstPost).get();
     var secondDoc = await galleryCollection.doc(secondPost).get();
     var thirdDoc = await galleryCollection.doc(thirdPost).get();

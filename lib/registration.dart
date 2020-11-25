@@ -10,6 +10,7 @@ import 'package:image_picker/image_picker.dart';
 import 'data.dart';
 import 'home_page.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'my_stepper.dart';
 
 class Registration extends StatefulWidget {
   @override
@@ -46,7 +47,7 @@ class _RegistrationState extends State<Registration> {
   final _accountFormKey = GlobalKey<FormState>();
   final _personalFormKey = GlobalKey<FormState>();
   final _collegeFormKey = GlobalKey<FormState>();
-  List<Step> _stepsList;
+  List<MyStep> _stepsList;
   bool passwordNotVisible = true;
   bool confirmPasswordNotVisible = true;
 
@@ -71,10 +72,15 @@ class _RegistrationState extends State<Registration> {
     super.dispose();
   }
 
-  List<Step> _buildStep () {
+  _buildStep () {
     _stepsList = [
-      Step(
-        title: Text("Step 1"),
+      MyStep(
+        title: Text(
+            "Step 1",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         isActive: true,
         content: SafeArea(
           child: SingleChildScrollView(
@@ -89,7 +95,7 @@ class _RegistrationState extends State<Registration> {
                       'Step 1: Account Details',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 25,
                       ),
                     ),
@@ -114,12 +120,12 @@ class _RegistrationState extends State<Registration> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         labelText: "Email:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -147,12 +153,12 @@ class _RegistrationState extends State<Registration> {
                       obscureText: passwordNotVisible,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         labelText: "Password:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -191,12 +197,12 @@ class _RegistrationState extends State<Registration> {
                       obscureText: confirmPasswordNotVisible,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         labelText: "Confirm password:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -224,8 +230,13 @@ class _RegistrationState extends State<Registration> {
           ),
         ),
       ),
-      Step(
-        title: Text("Step 2"),
+      MyStep(
+        title: Text(
+          "Step 2",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         isActive: true,
         content: SafeArea(
           child: SingleChildScrollView(
@@ -240,7 +251,7 @@ class _RegistrationState extends State<Registration> {
                       'Step 2: Personal Details',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 25,
                       ),
                     ),
@@ -249,6 +260,7 @@ class _RegistrationState extends State<Registration> {
                     child: CircleAvatar(
                       radius: 50,
                       child: CircleAvatar(
+                        backgroundColor: Colors.white,
                         radius: 50,
                         backgroundImage: (_image != null)?Image.file(_image, fit: BoxFit.fitHeight).image:null,
                         child: (_image != null)?null:Icon(Icons.add_a_photo,color: Data.primaryColor,),
@@ -296,12 +308,12 @@ class _RegistrationState extends State<Registration> {
                       controller: nameController,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor:  Colors.white,
                         labelText: "Name:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -325,12 +337,12 @@ class _RegistrationState extends State<Registration> {
                       controller: houseNameController,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         labelText: "House Name:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -354,12 +366,12 @@ class _RegistrationState extends State<Registration> {
                       controller: fatherNameController,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         labelText: "Father Name:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -383,12 +395,12 @@ class _RegistrationState extends State<Registration> {
                       controller: motherNameController,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         labelText: "Mother Name:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -426,12 +438,12 @@ class _RegistrationState extends State<Registration> {
                       },
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         labelText: "Date of Birth:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         prefixIcon: Icon(
@@ -457,12 +469,12 @@ class _RegistrationState extends State<Registration> {
                         labelText: "Place:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         prefixIcon: Icon(
                           Icons.place,
                           color: Data.primaryColor,
@@ -475,7 +487,7 @@ class _RegistrationState extends State<Registration> {
                     margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
                     padding: EdgeInsets.all(4.0),
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
+                      color: Colors.white,
                       border: Border.all(
                         color: Colors.black45,
                         width: 1.0,
@@ -545,10 +557,10 @@ class _RegistrationState extends State<Registration> {
                   Container(
                     padding: EdgeInsets.all(5.0),
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
+                      color: Colors.white,
                       border: Border.all(
                         color: Colors.black45,
-                        width: 1.0,
+                        width: 1.5,
                       ),
                       borderRadius: BorderRadius.all(
                         Radius.circular(5.0),
@@ -624,7 +636,7 @@ class _RegistrationState extends State<Registration> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         prefixIcon: Icon(
                           Icons.phone,
                           color: Data.primaryColor,
@@ -632,8 +644,8 @@ class _RegistrationState extends State<Registration> {
                         labelText: "Phone Number:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         border: OutlineInputBorder(),
@@ -657,7 +669,7 @@ class _RegistrationState extends State<Registration> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         prefixIcon: Icon(
                           Icons.public,
                           color: Data.primaryColor,
@@ -665,8 +677,8 @@ class _RegistrationState extends State<Registration> {
                         labelText: "Whatsapp No:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         border: OutlineInputBorder(),
@@ -679,8 +691,13 @@ class _RegistrationState extends State<Registration> {
           ),
         ),
       ),
-      Step(
-        title: Text("Step 3"),
+      MyStep(
+        title: Text(
+          "Step 3",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         isActive: true,
         content: SafeArea(
           child: SingleChildScrollView(
@@ -695,7 +712,7 @@ class _RegistrationState extends State<Registration> {
                       'Step 3: College Details',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 25,
                       ),
                     ),
@@ -714,7 +731,7 @@ class _RegistrationState extends State<Registration> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         prefixIcon: Icon(
                           Icons.receipt,
                           color: Data.primaryColor,
@@ -722,8 +739,8 @@ class _RegistrationState extends State<Registration> {
                         labelText: "CIC Number:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         border: OutlineInputBorder(),
@@ -734,10 +751,10 @@ class _RegistrationState extends State<Registration> {
                     margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
                     padding: EdgeInsets.all(4.0),
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
+                      color: Colors.white,
                       border: Border.all(
                         color: Colors.black45,
-                        width: 1.0,
+                        width: 1.5,
                       ),
                       borderRadius: BorderRadius.all(
                         Radius.circular(5.0),
@@ -815,7 +832,7 @@ class _RegistrationState extends State<Registration> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[250],
+                        fillColor: Colors.white,
                         prefixIcon: Icon(
                           Icons.group,
                           color: Data.primaryColor,
@@ -823,8 +840,8 @@ class _RegistrationState extends State<Registration> {
                         labelText: "CIC Batch:",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Data.primaryColor,
-                            width: 2.5,
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
                           ),
                         ),
                         border: OutlineInputBorder(),
@@ -840,20 +857,20 @@ class _RegistrationState extends State<Registration> {
     ];
   }
 
-  void _addDataToFirebase (String email,String password,String name,String HName,String fatherName,String motherName,String DoB,String place,String district,String bloodGroup,String phNo,String WhNo,String cic,String collegeName,String cicBatch) {
+  void _addDataToFirebase (String email,String password,String name,String houseName,String fatherName,String motherName,String dateOfBirth,String place,String district,String bloodGroup,String phNo,String whatsappNo,String cic,String collegeName,String cicBatch) {
     FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password).then((value) => {
       FirebaseFirestore.instance.collection("Registered Users").doc(email).set({
         "Email": email,
         "Name": name,
-        "House Name": HName,
+        "House Name": houseName,
         "Father Name": fatherName,
         "Mother Name": motherName,
-        "Date of Birth": DoB,
+        "Date of Birth": dateOfBirth,
         "Place": place,
         "District": district,
         "Blood Group": bloodGroup,
         "Phone Number": phNo,
-        "Whatsapp Number": WhNo,
+        "Whatsapp Number": whatsappNo,
         "CIC No": cic,
         "College Name": collegeName,
         "CIC Batch": cicBatch,
@@ -956,6 +973,7 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     _buildStep();
     return Scaffold(
+      backgroundColor: Data.primaryColor,
       appBar: AppBar(
         title: Text(
           "Registration",
@@ -977,7 +995,7 @@ class _RegistrationState extends State<Registration> {
       ),
       body: ModalProgressHUD(
         progressIndicator: CircularProgressIndicator(),
-        color: Data.primaryColor,
+        color: Colors.white,
         inAsyncCall: _validating,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -986,12 +1004,21 @@ class _RegistrationState extends State<Registration> {
               child: Theme(
                 data: ThemeData(
                   accentColor: Data.primaryColor,
-                  primarySwatch: Data.primaryColor,
+                  primarySwatch: MaterialColor(0xFFFFFFFF,<int,Color> {100: Color(0xFFFFFFFF)}),
+                  canvasColor: Colors.cyan,
+                  backgroundColor: Colors.white,
+
+                  primaryColorDark: Colors.white,
+                  secondaryHeaderColor: Colors.white,
+                  textSelectionColor: Colors.white,
+                  textSelectionHandleColor: Colors.white,
                   colorScheme: ColorScheme.light(
-                    primary: Data.primaryColor,
+                    primary: Colors.white,
+                    onPrimary: Data.primaryColor,
+                    primaryVariant: Colors.white,
                   ),
                 ),
-                child: Stepper(
+                child: MyStepper(
                   controlsBuilder:(currentStep == 2)?(BuildContext context,
                       {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
                     return Row(
@@ -999,11 +1026,11 @@ class _RegistrationState extends State<Registration> {
                         Container(
                           margin: EdgeInsets.only(top: 15,left: 7.5,right: 15,bottom: 15),
                           child: FlatButton(
-                            color: Data.primaryColor,
+                            color: Colors.white,
                             child: const Text(
                               'REGISTER',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.cyan,
                               ),
                             ),
                             onPressed: onStepContinue,
@@ -1015,7 +1042,7 @@ class _RegistrationState extends State<Registration> {
                             child: const Text(
                               'CANCEL',
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.white,
                               ),
                             ),
                             onPressed: onStepCancel,
@@ -1024,7 +1051,7 @@ class _RegistrationState extends State<Registration> {
                       ],
                     );
                   }:null,
-                  type: StepperType.horizontal,
+                  type: MyStepperType.horizontal,
                   steps: _stepsList,
                   currentStep: currentStep,
                   onStepContinue: () {

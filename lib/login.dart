@@ -11,6 +11,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Data.primaryColor,
       appBar: AppBar(
         title: Text(
           "Login",
@@ -52,7 +53,7 @@ class _LoginBodyState extends State<LoginBody> {
   Widget build(BuildContext context) {
     return ModalProgressHUD(
       inAsyncCall: _validating,
-      color: Data.primaryColor,
+      color: Colors.white,
       progressIndicator: CircularProgressIndicator(),
       child: SafeArea(
         child: Center(
@@ -81,7 +82,7 @@ class _LoginBodyState extends State<LoginBody> {
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[250],
+                      fillColor: Colors.white,
                       labelText: "Email:",
                       errorText: emailAlreadyExist?'Email does not exist!':null,
                       prefixIcon: Icon(
@@ -90,8 +91,8 @@ class _LoginBodyState extends State<LoginBody> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Data.primaryColor,
-                          width: 2.5,
+                          color: Colors.cyan.shade300,
+                          width: 1.5,
                         ),
                       ),
                       border: OutlineInputBorder(),
@@ -114,12 +115,12 @@ class _LoginBodyState extends State<LoginBody> {
                     controller: _passwordController,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[250],
+                      fillColor: Colors.white,
                       errorText: wrongPassword?'Incorrect password!':null,
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Data.primaryColor,
-                          width: 2.5,
+                          color: Colors.cyan.shade300,
+                          width: 1.5,
                         ),
                       ),
                       prefixIcon: Icon(
@@ -134,6 +135,7 @@ class _LoginBodyState extends State<LoginBody> {
                         },
                         child: Icon(
                           (passwordNotVisible)?EvaIcons.eye:EvaIcons.eyeOff,
+                          color: Data.primaryColor,
                         ),
                       ),
                       labelText: "Password:",
@@ -150,12 +152,12 @@ class _LoginBodyState extends State<LoginBody> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(
-                          color: Data.primaryColor,
+                          color: Colors.white,
                           width: 2.5,
                         ),
                       ),
-                      color: Data.primaryColor,
-                      textColor: Colors.white,
+                      color: Colors.white,
+                      textColor: Data.primaryColor,
                       onPressed: () {
                         if(_formKey.currentState.validate()) {
                           String email = _emailController.text;
@@ -212,6 +214,7 @@ class _LoginBodyState extends State<LoginBody> {
                         Text(
                           'Don\'t have an account? ',
                           style: TextStyle(
+
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -227,7 +230,7 @@ class _LoginBodyState extends State<LoginBody> {
                             'Create one now! ',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Data.primaryColor,
+                              color: Colors.white,
                             ),
                           ),
                         ),
