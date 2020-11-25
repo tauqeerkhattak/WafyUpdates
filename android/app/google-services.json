@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "722230291350",
+    "firebase_url": "https://modifiedflutterapplication.firebaseio.com",
+    "project_id": "modifiedflutterapplication",
+    "storage_bucket": "modifiedflutterapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722230291350:android:7756845161fe6a95094bb7",
+        "android_client_info": {
+          "package_name": "com.tauqeer.modified_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722230291350-vl3emsrj96ci0000qk4j2olvrtrna4sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAToeHEdxuEF_egT0GAi6B7j_odN3xRLmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722230291350-vl3emsrj96ci0000qk4j2olvrtrna4sk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "722230291350-1dmfbqeqcom6dudkj8sfkt3gjsug5i4h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tauqeer.modifiedFlutterApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
