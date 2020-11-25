@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:modified_flutter_app/add_data_entry.dart';
-import 'package:modified_flutter_app/view_data_entry_list.dart';
+import 'package:wafy_updates/add_data_entry.dart';
+import 'package:wafy_updates/view_data_entry_list.dart';
 import 'data.dart';
 
 class SearchDataEntry extends StatelessWidget {

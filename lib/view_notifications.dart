@@ -2,10 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:modified_flutter_app/add_notification.dart';
-import 'package:modified_flutter_app/single_notification.dart';
+import 'package:wafy_updates/add_notification.dart';
+import 'package:wafy_updates/single_notification.dart';
 import 'package:flutter_swipe_action_cell/flutter_swipe_action_cell.dart';
-
 import 'data.dart';
 
 class ViewNotifications extends StatelessWidget {

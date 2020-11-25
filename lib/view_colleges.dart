@@ -3,8 +3,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
-import 'package:modified_flutter_app/add_colleges.dart';
-import 'package:modified_flutter_app/single_college_view.dart';
+import 'package:wafy_updates/add_colleges.dart';
+import 'package:wafy_updates/single_college_view.dart';
 import 'data.dart';
 import 'edit_college.dart';
 

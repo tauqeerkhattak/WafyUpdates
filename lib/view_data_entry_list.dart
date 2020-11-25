@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
-import 'package:modified_flutter_app/single_data_entry.dart';
+import 'package:wafy_updates/single_data_entry.dart';
 import 'data.dart';
 import 'edit_data_entry.dart';
 

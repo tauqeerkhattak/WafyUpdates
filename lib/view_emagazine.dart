@@ -3,7 +3,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
-import 'package:modified_flutter_app/add_emagazine.dart';
+import 'package:wafy_updates/add_emagazine.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'data.dart';

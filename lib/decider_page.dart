@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:modified_flutter_app/home_page.dart';
-
+import 'package:wafy_updates/home_page.dart';
 import 'login.dart';
 
 class Decider extends StatelessWidget {

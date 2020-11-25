@@ -2,8 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_format/date_format.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:modified_flutter_app/in_app_messaging.dart';
-
+import 'package:wafy_updates/in_app_messaging.dart';
 import 'data.dart';
 
 class AddNotification extends StatelessWidget {

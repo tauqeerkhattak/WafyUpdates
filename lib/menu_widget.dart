@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:share/share.dart';
-import 'package:modified_flutter_app/login.dart';
+import 'package:wafy_updates/login.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'data.dart';
 import 'profile.dart';

@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:modified_flutter_app/registration.dart';
+import 'package:wafy_updates/registration.dart';
 import 'data.dart';
 import 'home_page.dart';
 
