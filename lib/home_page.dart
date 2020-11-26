@@ -413,10 +413,17 @@ class _HomePageState extends State<HomePage> {
                                 child: Center(
                                   child: Column(
                                     children: <Widget>[
-                                      Icon(
-                                        LineAwesomeIcons.photo_video,
-                                        color: Data.primaryColor,
-                                        size: 55,
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 5.0),
+                                        child: CircleAvatar(
+                                          radius: 30,
+                                          backgroundColor: Data.primaryColor,
+                                          child: Icon(
+                                            LineAwesomeIcons.photo_video,
+                                            color: Colors.white,
+                                            size: 40,
+                                          ),
+                                        ),
                                       ),
                                       Text(
                                         "Edit ImageSlider",
@@ -440,10 +447,17 @@ class _HomePageState extends State<HomePage> {
                                 child: Center(
                                   child: Column(
                                     children: <Widget>[
-                                      Icon(
-                                        LineAwesomeIcons.image,
-                                        color: Data.primaryColor,
-                                        size: 55,
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 5.0),
+                                        child: CircleAvatar(
+                                          radius: 30,
+                                          backgroundColor: Data.primaryColor,
+                                          child: Icon(
+                                            LineAwesomeIcons.image,
+                                            color: Colors.white,
+                                            size: 40,
+                                          ),
+                                        ),
                                       ),
                                       Text(
                                         "Gallery",
@@ -467,10 +481,17 @@ class _HomePageState extends State<HomePage> {
                                 child: Center(
                                   child: Column(
                                     children: <Widget>[
-                                      Icon(
-                                        LineAwesomeIcons.bell,
-                                        color: Data.primaryColor,
-                                        size: 55,
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 5.0),
+                                        child: CircleAvatar(
+                                          radius: 30,
+                                          backgroundColor: Data.primaryColor,
+                                          child: Icon(
+                                            LineAwesomeIcons.bell,
+                                            color: Colors.white,
+                                            size: 40,
+                                          ),
+                                        ),
                                       ),
                                       Text(
                                         "Notifications",
@@ -494,10 +515,17 @@ class _HomePageState extends State<HomePage> {
                                 child: Center(
                                   child: Column(
                                     children: <Widget>[
-                                      Icon(
-                                        LineAwesomeIcons.search_location,
-                                        color: Data.primaryColor,
-                                        size: 55,
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 5.0),
+                                        child: CircleAvatar(
+                                          radius: 30,
+                                          backgroundColor: Data.primaryColor,
+                                          child: Icon(
+                                            LineAwesomeIcons.search_location,
+                                            color: Colors.white,
+                                            size: 40,
+                                          ),
+                                        ),
                                       ),
                                       Text(
                                         "Orbit Search",
@@ -521,10 +549,17 @@ class _HomePageState extends State<HomePage> {
                                 child: Center(
                                   child: Column(
                                     children: <Widget>[
-                                      Icon(
-                                        LineAwesomeIcons.file_contract,
-                                        color: Data.primaryColor,
-                                        size: 55,
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 5.0),
+                                        child: CircleAvatar(
+                                          radius: 30,
+                                          backgroundColor: Data.primaryColor,
+                                          child: Icon(
+                                            LineAwesomeIcons.file_contract,
+                                            color: Colors.white,
+                                            size: 40,
+                                          ),
+                                        ),
                                       ),
                                       Text(
                                         "E-Read",
@@ -548,10 +583,17 @@ class _HomePageState extends State<HomePage> {
                                 child: Center(
                                   child: Column(
                                     children: <Widget>[
-                                      Icon(
-                                        LineAwesomeIcons.graduation_cap,
-                                        color: Data.primaryColor,
-                                        size: 55,
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 5.0),
+                                        child: CircleAvatar(
+                                          radius: 30,
+                                          backgroundColor: Data.primaryColor,
+                                          child: Icon(
+                                            LineAwesomeIcons.graduation_cap,
+                                            color: Colors.white,
+                                            size: 40,
+                                          ),
+                                        ),
                                       ),
                                       Text(
                                         "List Colleges",

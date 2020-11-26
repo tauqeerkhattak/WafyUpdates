@@ -103,7 +103,6 @@ class _RegistrationState extends State<Registration> {
                   Container(
                     margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
                     child: TextFormField(
-                      autofocus: false,
                       validator: (String email) {
                         if (email.isEmpty || email == null) {
                           return "Email can't be empty!";
@@ -122,15 +121,18 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor: Colors.white,
                         labelText: "Email:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.person,
+                          color: Data.primaryColor,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
-                        ),
-                        prefixIcon: Icon(
-                          Icons.email,
-                          color: Data.primaryColor,
                         ),
                         border: OutlineInputBorder(),
                       ),
@@ -155,6 +157,9 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor: Colors.white,
                         labelText: "Password:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -199,6 +204,9 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor: Colors.white,
                         labelText: "Confirm password:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -310,6 +318,9 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor:  Colors.white,
                         labelText: "Name:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -339,6 +350,9 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor: Colors.white,
                         labelText: "House Name:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -368,6 +382,9 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor: Colors.white,
                         labelText: "Father Name:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -397,6 +414,9 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor: Colors.white,
                         labelText: "Mother Name:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -440,6 +460,9 @@ class _RegistrationState extends State<Registration> {
                         filled: true,
                         fillColor: Colors.white,
                         labelText: "Date of Birth:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -467,6 +490,9 @@ class _RegistrationState extends State<Registration> {
                       controller: placeController,
                       decoration: InputDecoration(
                         labelText: "Place:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -516,7 +542,7 @@ class _RegistrationState extends State<Registration> {
                               "District:",
                               style: TextStyle(
                                 fontSize: 17,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                               ),
                             ),
                           ),
@@ -583,7 +609,7 @@ class _RegistrationState extends State<Registration> {
                             "Blood Group: ",
                             style: TextStyle(
                               fontSize: 17,
-                              color: Colors.grey,
+                              color: Colors.cyan,
                             ),
                           ),
                         ),
@@ -642,6 +668,9 @@ class _RegistrationState extends State<Registration> {
                           color: Data.primaryColor,
                         ),
                         labelText: "Phone Number:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -675,6 +704,9 @@ class _RegistrationState extends State<Registration> {
                           color: Data.primaryColor,
                         ),
                         labelText: "Whatsapp No:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -737,6 +769,9 @@ class _RegistrationState extends State<Registration> {
                           color: Data.primaryColor,
                         ),
                         labelText: "CIC Number:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -780,7 +815,7 @@ class _RegistrationState extends State<Registration> {
                               "College:",
                               style: TextStyle(
                                 fontSize: 17,
-                                color: Colors.grey,
+                                color: Colors.cyan,
                               ),
                             ),
                           ),
@@ -838,6 +873,9 @@ class _RegistrationState extends State<Registration> {
                           color: Data.primaryColor,
                         ),
                         labelText: "CIC Batch:",
+                        labelStyle: TextStyle(
+                          color: Colors.cyan,
+                        ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
@@ -1007,11 +1045,10 @@ class _RegistrationState extends State<Registration> {
                   primarySwatch: MaterialColor(0xFFFFFFFF,<int,Color> {100: Color(0xFFFFFFFF)}),
                   canvasColor: Colors.cyan,
                   backgroundColor: Colors.white,
-
                   primaryColorDark: Colors.white,
                   secondaryHeaderColor: Colors.white,
                   textSelectionColor: Colors.white,
-                  textSelectionHandleColor: Colors.white,
+                  textSelectionHandleColor: Colors.cyan,
                   colorScheme: ColorScheme.light(
                     primary: Colors.white,
                     onPrimary: Data.primaryColor,
