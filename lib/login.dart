@@ -85,7 +85,7 @@ class _LoginBodyState extends State<LoginBody> {
                       fillColor: Colors.white,
                       labelText: "Email:",
                       labelStyle: TextStyle(
-                        color: Colors.cyan,
+                        color: Colors.black,
                       ),
                       errorText: emailAlreadyExist?'Email does not exist!':null,
                       prefixIcon: Icon(
@@ -143,7 +143,7 @@ class _LoginBodyState extends State<LoginBody> {
                       ),
                       labelText: "Password:",
                       labelStyle: TextStyle(
-                        color: Colors.cyan,
+                        color: Colors.black,
                       ),
                       border: OutlineInputBorder(),
                     ),

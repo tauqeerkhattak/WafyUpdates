@@ -122,7 +122,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Email:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         prefixIcon: Icon(
                           Icons.person,
@@ -158,7 +158,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Password:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -205,7 +205,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Confirm password:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -319,7 +319,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor:  Colors.white,
                         labelText: "Name:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -351,7 +351,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "House Name:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -383,7 +383,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Father Name:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -415,7 +415,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Mother Name:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -461,7 +461,7 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Date of Birth:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -491,7 +491,7 @@ class _RegistrationState extends State<Registration> {
                       decoration: InputDecoration(
                         labelText: "Place:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -542,7 +542,7 @@ class _RegistrationState extends State<Registration> {
                               "District:",
                               style: TextStyle(
                                 fontSize: 17,
-                                color: Colors.cyan,
+                                color: Colors.black,
                               ),
                             ),
                           ),
@@ -609,7 +609,7 @@ class _RegistrationState extends State<Registration> {
                             "Blood Group: ",
                             style: TextStyle(
                               fontSize: 17,
-                              color: Colors.cyan,
+                              color: Colors.black,
                             ),
                           ),
                         ),
@@ -669,7 +669,7 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "Phone Number:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -705,7 +705,7 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "Whatsapp No:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -770,7 +770,7 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "CIC Number:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -815,7 +815,7 @@ class _RegistrationState extends State<Registration> {
                               "College:",
                               style: TextStyle(
                                 fontSize: 17,
-                                color: Colors.cyan,
+                                color: Colors.black,
                               ),
                             ),
                           ),
@@ -874,7 +874,7 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "CIC Batch:",
                         labelStyle: TextStyle(
-                          color: Colors.cyan,
+                          color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
