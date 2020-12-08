@@ -9,13 +9,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:wafy_updates/add_delete_slider_images.dart';
 import 'package:wafy_updates/push_notification.dart';
 import 'package:wafy_updates/search_data_entry.dart';
 import 'package:wafy_updates/single_notification.dart';
 import 'package:wafy_updates/view_colleges.dart';
 import 'package:wafy_updates/view_emagazine.dart';
 import 'package:wafy_updates/view_notifications.dart';
+import 'admin.dart';
 import 'data.dart';
 import 'gallery.dart';
 import 'in_app_messaging.dart';
@@ -406,7 +406,7 @@ class _HomePageState extends State<HomePage> {
                                   print("Pressed!");
                                   Navigator.push(context, MaterialPageRoute(
                                       builder: (context) {
-                                        return AddDeleteImageSlider();
+                                        return AdminLogin();
                                       }
                                   ));
                                 },
@@ -419,14 +419,14 @@ class _HomePageState extends State<HomePage> {
                                           radius: 30,
                                           backgroundColor: Data.primaryColor,
                                           child: Icon(
-                                            LineAwesomeIcons.photo_video,
+                                            Icons.admin_panel_settings_outlined,
                                             color: Colors.white,
                                             size: 40,
                                           ),
                                         ),
                                       ),
                                       Text(
-                                        "Edit ImageSlider",
+                                        "Admin Login",
                                         style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 11,

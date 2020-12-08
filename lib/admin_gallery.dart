@@ -7,22 +7,22 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:wafy_updates/single_image.dart';
+import 'package:wafy_updates/admin_single_image.dart';
 import 'data.dart';
 
-class Gallery extends StatelessWidget {
+class AdminGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GalleryBody();
+    return AdminGalleryBody();
   }
 }
 
-class GalleryBody extends StatefulWidget {
+class AdminGalleryBody extends StatefulWidget {
   @override
-  _GalleryBodyState createState() => _GalleryBodyState();
+  _AdminGalleryBodyState createState() => _AdminGalleryBodyState();
 }
 
-class _GalleryBodyState extends State<GalleryBody> {
+class _AdminGalleryBodyState extends State<AdminGalleryBody> {
 
   final picker = ImagePicker();
   var instance = FirebaseStorage.instance;
@@ -114,6 +114,70 @@ class _GalleryBodyState extends State<GalleryBody> {
         centerTitle: true,
         backgroundColor: Data.primaryColor,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("Upload"),
+                  content: Text("Please select a picture you would like to upload the gallery!"),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text(
+                        "Cancel",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      color: Data.primaryColor,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    FlatButton(
+                      child: Text(
+                        "Camera",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      color: Data.primaryColor,
+                      onPressed: () async {
+                        File image = await getImageFromCamera();
+                        if(image != null) {
+                          uploadFile(image);
+                        }
+                        Navigator.pop(context);
+                      },
+                    ),
+                    FlatButton(
+                      child: Text(
+                        "Gallery",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      color: Data.primaryColor,
+                      onPressed: () async {
+                        File image = await getImageFromGallery();
+                        if (image != null) {
+                          uploadFile(image);
+                        }
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                );
+              }
+          );
+        },
+        child: Icon(
+          Icons.add_a_photo,
+          color: Colors.white,
+        ),
+        backgroundColor: Data.primaryColor,
+      ),
       body: SafeArea(
         child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
@@ -122,7 +186,7 @@ class _GalleryBodyState extends State<GalleryBody> {
               onTap: () async {
                 deletedOrNot = await Navigator.push(context, MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return SingleImageBody(images,index);
+                    return AdminSingleImage(images,index);
                   },
                 ));
                 if (deletedOrNot == true || deletedOrNot == null) {

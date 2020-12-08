@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wafy_updates/view_data_entry_list.dart';
+import 'package:wafy_updates/add_data_entry.dart';
+import 'admin_data_entry_list.dart';
 import 'data.dart';
 
-class SearchDataEntry extends StatelessWidget {
+class AdminSearchDataEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -30,28 +31,42 @@ class SearchDataEntry extends StatelessWidget {
           bottom: TabBar(
             tabs: [
               Tab(icon: Icon(
-                  Icons.school,
+                Icons.school,
                 color: Colors.white,
               )),
               Tab(icon: Icon(
-                  Icons.location_city,
+                Icons.location_city,
                 color: Colors.white,
               )),
             ],
           ),
         ),
-        body: SearchDataEntryBody(),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(
+            Icons.add_box,
+            color: Colors.white,
+          ),
+          backgroundColor: Data.primaryColor,
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return DataEntry();
+                }
+            ));
+          },
+        ),
+        body: AdminSearchDataEntryBody(),
       ),
     );
   }
 }
 
-class SearchDataEntryBody extends StatefulWidget {
+class AdminSearchDataEntryBody extends StatefulWidget {
   @override
-  _SearchDataEntryBodyState createState() => _SearchDataEntryBodyState();
+  _AdminSearchDataEntryBodyState createState() => _AdminSearchDataEntryBodyState();
 }
 
-class _SearchDataEntryBodyState extends State<SearchDataEntryBody> {
+class _AdminSearchDataEntryBodyState extends State<AdminSearchDataEntryBody> {
 
   String collegeDropdown = Data.collegeValues[0];
   String orbitDropdown = Data.orbitValues[0];
@@ -144,7 +159,7 @@ class _SearchDataEntryBodyState extends State<SearchDataEntryBody> {
           onPressed: () async {
             Navigator.push(context, MaterialPageRoute(
                 builder: (BuildContext context) {
-                  return ViewDataEntryList(collegeDropdown);
+                  return AdminDataEntryList(collegeDropdown);
                 }
             ));
           },
@@ -240,7 +255,7 @@ class _SearchDataEntryBodyState extends State<SearchDataEntryBody> {
           onPressed: () async {
             Navigator.push(context, MaterialPageRoute(
                 builder: (BuildContext context) {
-                  return ViewDataEntryList(orbitDropdown);
+                  return AdminDataEntryList(orbitDropdown);
                 }
             ));
           },

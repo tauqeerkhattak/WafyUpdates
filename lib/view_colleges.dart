@@ -1,12 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swipe_action_cell/core/cell.dart';
-import 'package:wafy_updates/add_colleges.dart';
 import 'package:wafy_updates/single_college_view.dart';
 import 'data.dart';
-import 'edit_college.dart';
 
 class ViewColleges extends StatelessWidget {
   @override
@@ -49,20 +45,6 @@ class ViewColleges extends StatelessWidget {
           ),
           backgroundColor: Data.primaryColor,
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Data.primaryColor,
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (BuildContext context) {
-                return AddColleges();
-              }
-            ));
-          },
-          child: Icon(
-            Icons.school_outlined,
-            color: Colors.white,
-          ),
-        ),
         body: ViewCollegesBody(),
       ),
     );
@@ -78,83 +60,16 @@ class _ViewCollegesBodyState extends State<ViewCollegesBody> {
 
   getExpenseItems(AsyncSnapshot<QuerySnapshot> snapshot) {
     return snapshot.data.docs.map((doc) =>
-      SwipeActionCell(
-        key: ObjectKey(doc),
-        performsFirstActionWithFullSwipe: true,
-        trailingActions: [
-          SwipeAction(
-            paddingToBoundary: 10,
-            icon: Icon(
-              Icons.delete,
-              color: Colors.white,
-            ),
-            color: Colors.red,
-            onTap: (CompletionHandler handler) async {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text("Confirmation"),
-                      content: Text("Are you sure you want to delete this College entry?"),
-                      actions: <Widget>[
-                        TextButton(
-                          child: Text(
-                            'No',
-                            style: TextStyle(
-                              color: Data.primaryColor,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        TextButton(
-                          child: Text(
-                            'Yes',
-                            style: TextStyle(
-                              color: Data.primaryColor,
-                            ),
-                          ),
-                          onPressed: () {
-                            FirebaseStorage.instance.ref().child("Colleges").child(doc.get("College Name")).delete();
-                            doc.reference.delete();
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ],
-                    );
-                  }
-              );
-            },
-          ),
-          SwipeAction(
-            paddingToBoundary: 10,
-            icon: Icon(
-              Icons.edit,
-              color: Colors.white,
-            ),
-            color: Data.primaryColor,
-            onTap: (CompletionHandler handler) async {
-              await handler(false);
-              await handler(false);
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return EditCollege(doc);
-                  }
-              ));
-            }
-          ),
-        ],
-        child: Card(
+        Card(
           margin: EdgeInsets.only(top: 10.0, left: 10.0, right: 10.0,bottom: 5.0),
           child: Container(
             padding: EdgeInsets.all(5.0),
             child: InkWell(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return SingleCollegeView(snapshot: doc,);
-                  }
+                    builder: (BuildContext context) {
+                      return SingleCollegeView(snapshot: doc,);
+                    }
                 ));
               },
               child: Row(
@@ -213,7 +128,6 @@ class _ViewCollegesBodyState extends State<ViewCollegesBody> {
             ),
           ),
         ),
-      ),
     ).toList();
   }
 
