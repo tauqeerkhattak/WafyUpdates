@@ -6,6 +6,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import 'data.dart';
 // TODO(dragostis): Missing functionality:
 //   * mobile horizontal mode with adding/removing steps
 //   * alternative labeling
@@ -403,7 +405,7 @@ class _MyStepperState extends State<MyStepper> with TickerProviderStateMixin {
     const EdgeInsets buttonPadding = EdgeInsets.symmetric(horizontal: 16.0);
 
     return Container(
-      margin: const EdgeInsets.only(top: 16.0),
+      margin: const EdgeInsets.only(top: 16.0,left: 40),
       child: ConstrainedBox(
         constraints: const BoxConstraints.tightFor(height: 48.0),
         child: Row(
@@ -418,19 +420,24 @@ class _MyStepperState extends State<MyStepper> with TickerProviderStateMixin {
                   return states.contains(MaterialState.disabled) ? null : (_isDark() ? colorScheme.onSurface : colorScheme.onPrimary);
                 }),
                 backgroundColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-                  return _isDark() || states.contains(MaterialState.disabled) ? null : colorScheme.primary;
+                  return _isDark() || states.contains(MaterialState.disabled) ? null : Data.primaryColor;
                 }),
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(buttonPadding),
                 shape: MaterialStateProperty.all<OutlinedBorder>(buttonShape),
               ),
-              child: Text(localizations.continueButtonLabel),
+              child: Text(
+                  localizations.continueButtonLabel,
+                style: TextStyle(
+                  color: Data.secondaryColor,
+                ),
+              ),
             ),
             Container(
               margin: const EdgeInsetsDirectional.only(start: 8.0),
               child: TextButton(
                 onPressed: widget.onStepCancel,
                 style: TextButton.styleFrom(
-                  primary: cancelColor,
+                  primary: Data.primaryColor,
                   padding: buttonPadding,
                   shape: buttonShape,
                 ),
@@ -662,7 +669,7 @@ class _MyStepperState extends State<MyStepper> with TickerProviderStateMixin {
         Expanded(
           child: ListView(
             physics: widget.physics,
-            padding: const EdgeInsets.all(24.0),
+            //padding: const EdgeInsets.all(24.0),
             children: <Widget>[
               AnimatedSize(
                 curve: Curves.fastOutSlowIn,

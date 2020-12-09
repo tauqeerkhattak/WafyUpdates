@@ -125,11 +125,6 @@ class _LoginBodyState extends State<LoginBody> {
                               ),
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            errorText: emailAlreadyExist?'Email does not exist!':null,
-                            prefixIcon: Icon(
-                              Icons.person,
-                              color: Data.primaryColor,
-                            ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors.cyan.shade300,
@@ -143,6 +138,11 @@ class _LoginBodyState extends State<LoginBody> {
                                 width: 1.5,
                               ),
                               borderRadius: BorderRadius.circular(30),
+                            ),
+                            errorText: emailAlreadyExist?'Email does not exist!':null,
+                            prefixIcon: Icon(
+                              Icons.person,
+                              color: Data.primaryColor,
                             ),
                           ),
                         ),

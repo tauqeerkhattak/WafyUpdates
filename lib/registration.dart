@@ -90,18 +90,42 @@ class _RegistrationState extends State<Registration> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.all(0.0),
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Image.asset(
+                            "assets/login_background.png",
+                            // width: MediaQuery.of(context).size.width,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 60),
+                          alignment: Alignment.topCenter,
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Data.secondaryColor,
+                            child: Image.asset('assets/logo.png'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 15.0,bottom: 0.0),
                     child: Text(
                       'Step 1: Account Details',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 25,
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       validator: (String email) {
                         if (email.isEmpty || email == null) {
@@ -122,24 +146,38 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Email:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
                         ),
-                        prefixIcon: Icon(
-                          Icons.person,
-                          color: Data.primaryColor,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        prefixIcon: Icon(
+                          Icons.person,
+                          color: Data.primaryColor,
+                        ),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String password) {
@@ -158,13 +196,28 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Password:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         prefixIcon: Icon(
                           Icons.lock,
@@ -181,12 +234,11 @@ class _RegistrationState extends State<Registration> {
                             color: Data.primaryColor,
                           ),
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String password) {
@@ -205,13 +257,28 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Confirm password:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         prefixIcon: Icon(
                           Icons.lock,
@@ -228,7 +295,6 @@ class _RegistrationState extends State<Registration> {
                             color: Data.primaryColor,
                           ),
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
@@ -242,7 +308,7 @@ class _RegistrationState extends State<Registration> {
         title: Text(
           "Step 2",
           style: TextStyle(
-            color: Colors.white,
+            color: Data.secondaryColor,
           ),
         ),
         isActive: true,
@@ -254,12 +320,36 @@ class _RegistrationState extends State<Registration> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.all(0.0),
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Image.asset(
+                            "assets/login_background.png",
+                            // width: MediaQuery.of(context).size.width,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 60),
+                          alignment: Alignment.topCenter,
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Data.secondaryColor,
+                            child: Image.asset('assets/logo.png'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 15.0,bottom: 0.0),
                     child: Text(
                       'Step 2: Personal Details',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 25,
                       ),
                     ),
@@ -268,10 +358,10 @@ class _RegistrationState extends State<Registration> {
                     child: CircleAvatar(
                       radius: 50,
                       child: CircleAvatar(
-                        backgroundColor: Colors.white,
+                        backgroundColor: Data.primaryColor,
                         radius: 50,
                         backgroundImage: (_image != null)?Image.file(_image, fit: BoxFit.fitHeight).image:null,
-                        child: (_image != null)?null:Icon(Icons.add_a_photo,color: Data.primaryColor,),
+                        child: (_image != null)?null:Icon(Icons.add_a_photo,color: Data.secondaryColor,),
                       ),
                     ),
                     onTap: () {
@@ -304,7 +394,7 @@ class _RegistrationState extends State<Registration> {
                     },
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 15.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String name) {
@@ -319,24 +409,38 @@ class _RegistrationState extends State<Registration> {
                         fillColor:  Colors.white,
                         labelText: "Name:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         prefixIcon: Icon(
                           Icons.perm_identity,
                           color: Data.primaryColor,
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String houseName) {
@@ -351,24 +455,38 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "House Name:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         prefixIcon: Icon(
                           Icons.home,
                           color: Data.primaryColor,
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String fatherName) {
@@ -383,24 +501,38 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Father Name:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         prefixIcon: Icon(
                           Icons.people,
                           color: Data.primaryColor,
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String motherName) {
@@ -415,24 +547,38 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Mother Name:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         prefixIcon: Icon(
                           Icons.people,
                           color: Data.primaryColor,
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String date) {
@@ -461,24 +607,38 @@ class _RegistrationState extends State<Registration> {
                         fillColor: Colors.white,
                         labelText: "Date of Birth:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         prefixIcon: Icon(
                           Icons.cake,
                           color: Data.primaryColor,
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String place) {
@@ -491,13 +651,28 @@ class _RegistrationState extends State<Registration> {
                       decoration: InputDecoration(
                         labelText: "Place:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         filled: true,
                         fillColor: Colors.white,
@@ -505,21 +680,20 @@ class _RegistrationState extends State<Registration> {
                           Icons.place,
                           color: Data.primaryColor,
                         ),
-                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     padding: EdgeInsets.all(4.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
-                        color: Colors.black45,
-                        width: 1.0,
+                        color: Colors.cyan.shade300,
+                        width: 1.5,
                       ),
                       borderRadius: BorderRadius.all(
-                        Radius.circular(5.0),
+                        Radius.circular(30.0),
                       ),
                     ),
                     child: SizedBox(
@@ -542,7 +716,7 @@ class _RegistrationState extends State<Registration> {
                               "District:",
                               style: TextStyle(
                                 fontSize: 17,
-                                color: Colors.black,
+                                color: Colors.grey,
                               ),
                             ),
                           ),
@@ -552,11 +726,11 @@ class _RegistrationState extends State<Registration> {
                               value: districtDropdown,
                               icon: Icon(
                                 Icons.arrow_drop_down,
-                                color: Colors.black,
+                                color: Colors.grey,
                               ),
                               iconSize: 24,
                               elevation: 16,
-                              style: TextStyle(color: Colors.black),
+                              style: TextStyle(color: Colors.grey),
                               underline: DropdownButtonHideUnderline(
                                 child: Container(),
                               ),
@@ -585,14 +759,14 @@ class _RegistrationState extends State<Registration> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
-                        color: Colors.black45,
+                        color: Colors.cyan.shade300,
                         width: 1.5,
                       ),
                       borderRadius: BorderRadius.all(
-                        Radius.circular(5.0),
+                        Radius.circular(30.0),
                       ),
                     ),
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: Row(
                       children: <Widget>[
                         Container(
@@ -609,7 +783,7 @@ class _RegistrationState extends State<Registration> {
                             "Blood Group: ",
                             style: TextStyle(
                               fontSize: 17,
-                              color: Colors.black,
+                              color: Colors.grey,
                             ),
                           ),
                         ),
@@ -618,11 +792,11 @@ class _RegistrationState extends State<Registration> {
                             value: bloodGroupDropdown,
                             icon: Icon(
                               Icons.arrow_drop_down,
-                              color: Colors.black,
+                              color: Colors.grey,
                             ),
                             iconSize: 24,
                             elevation: 16,
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.grey),
                             underline: DropdownButtonHideUnderline(
                               child: Container(),
                             ),
@@ -646,7 +820,7 @@ class _RegistrationState extends State<Registration> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String phone) {
@@ -669,20 +843,34 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "Phone Number:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 10.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String whatsapp) {
@@ -705,15 +893,29 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "Whatsapp No:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                       ),
                     ),
                   ),
@@ -739,18 +941,42 @@ class _RegistrationState extends State<Registration> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.all(0.0),
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Image.asset(
+                            "assets/login_background.png",
+                            // width: MediaQuery.of(context).size.width,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 30),
+                          alignment: Alignment.topCenter,
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Data.secondaryColor,
+                            child: Image.asset('assets/logo.png'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 15.0,bottom: 0.0),
                     child: Text(
                       'Step 3: College Details',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 25,
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 15.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 15.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String cic) {
@@ -770,29 +996,43 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "CIC Number:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     padding: EdgeInsets.all(4.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
-                        color: Colors.black45,
+                        color: Data.primaryColor,
                         width: 1.5,
                       ),
                       borderRadius: BorderRadius.all(
-                        Radius.circular(5.0),
+                        Radius.circular(30.0),
                       ),
                     ),
                     child: SizedBox(
@@ -815,7 +1055,7 @@ class _RegistrationState extends State<Registration> {
                               "College:",
                               style: TextStyle(
                                 fontSize: 17,
-                                color: Colors.black,
+                                color: Colors.grey,
                               ),
                             ),
                           ),
@@ -825,11 +1065,11 @@ class _RegistrationState extends State<Registration> {
                               value: collegeDropdown,
                               icon: Icon(
                                 Icons.arrow_drop_down,
-                                color: Colors.black,
+                                color: Colors.grey,
                               ),
                               iconSize: 24,
                               elevation: 16,
-                              style: TextStyle(color: Colors.black),
+                              style: TextStyle(color: Colors.grey),
                               underline: DropdownButtonHideUnderline(
                                 child: Container(),
                               ),
@@ -854,7 +1094,7 @@ class _RegistrationState extends State<Registration> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10.0,left: 15.0,right: 15.0,bottom: 0.0),
+                    margin: EdgeInsets.only(top: 10.0,left: 40.0,right: 40.0,bottom: 0.0),
                     child: TextFormField(
                       autofocus: false,
                       validator: (String cicBatch) {
@@ -874,15 +1114,29 @@ class _RegistrationState extends State<Registration> {
                         ),
                         labelText: "CIC Batch:",
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.grey,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.cyan.shade300,
                             width: 1.5,
                           ),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.cyan.shade300,
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                       ),
                     ),
                   ),
@@ -1011,7 +1265,7 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     _buildStep();
     return Scaffold(
-      backgroundColor: Data.primaryColor,
+      backgroundColor: Data.secondaryColor,
       appBar: AppBar(
         title: Text(
           "Registration",
@@ -1030,146 +1284,149 @@ class _RegistrationState extends State<Registration> {
             Navigator.pop(context);
           },
         ),
+        elevation: 0.0,
       ),
-      body: ModalProgressHUD(
-        progressIndicator: CircularProgressIndicator(),
-        color: Colors.white,
-        inAsyncCall: _validating,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Expanded(
-              child: Theme(
-                data: ThemeData(
-                  accentColor: Data.primaryColor,
-                  primarySwatch: MaterialColor(0xFFFFFFFF,<int,Color> {100: Color(0xFFFFFFFF)}),
-                  canvasColor: Colors.cyan,
-                  backgroundColor: Colors.white,
-                  primaryColorDark: Colors.white,
-                  secondaryHeaderColor: Colors.white,
-                  textSelectionColor: Colors.white,
-                  textSelectionHandleColor: Colors.cyan,
-                  colorScheme: ColorScheme.light(
-                    primary: Colors.white,
-                    onPrimary: Data.primaryColor,
-                    primaryVariant: Colors.white,
+      body: SafeArea(
+        child: ModalProgressHUD(
+          progressIndicator: CircularProgressIndicator(),
+          color: Data.primaryColor,
+          inAsyncCall: _validating,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Expanded(
+                child: Theme(
+                  data: ThemeData(
+                    accentColor: Data.primaryColor,
+                    primarySwatch: MaterialColor(0xFFFFFFFF,<int,Color> {100: Color(0xFFFFFFFF)}),
+                    canvasColor: Colors.cyan,
+                    backgroundColor: Data.primaryColor,
+                    primaryColorDark: Colors.white,
+                    secondaryHeaderColor: Colors.white,
+                    textSelectionColor: Colors.white,
+                    textSelectionHandleColor: Colors.cyan,
+                    colorScheme: ColorScheme.light(
+                      primary: Colors.white,
+                      onPrimary: Data.primaryColor,
+                      primaryVariant: Colors.white,
+                    ),
                   ),
-                ),
-                child: MyStepper(
-                  controlsBuilder:(currentStep == 2)?(BuildContext context,
-                      {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
-                    return Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 15,left: 7.5,right: 15,bottom: 15),
-                          child: FlatButton(
-                            color: Colors.white,
-                            child: const Text(
-                              'REGISTER',
-                              style: TextStyle(
-                                color: Colors.cyan,
+                  child: MyStepper(
+                    controlsBuilder:(currentStep == 2)?(BuildContext context,
+                        {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
+                      return Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 15,left: 40,right: 15,bottom: 15),
+                            child: FlatButton(
+                              color: Data.primaryColor,
+                              child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                  color: Data.secondaryColor,
+                                ),
                               ),
+                              onPressed: onStepContinue,
                             ),
-                            onPressed: onStepContinue,
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: 15,left: 15,right: 7.5,bottom: 15),
-                          child: TextButton(
-                            child: const Text(
-                              'CANCEL',
-                              style: TextStyle(
-                                color: Colors.white,
+                          Container(
+                            margin: EdgeInsets.only(top: 15,left: 15,right: 7.5,bottom: 15),
+                            child: TextButton(
+                              child: const Text(
+                                'CANCEL',
+                                style: TextStyle(
+                                  color: Colors.cyan,
+                                ),
                               ),
+                              onPressed: onStepCancel,
                             ),
-                            onPressed: onStepCancel,
                           ),
-                        ),
-                      ],
-                    );
-                  }:null,
-                  type: MyStepperType.horizontal,
-                  steps: _stepsList,
-                  currentStep: currentStep,
-                  onStepContinue: () {
-                    if(currentStep == 0) {
-                      if(passwordController.text == confirmPasswordController.text) {
-                        print("Next Page 1");
-                        if(_accountFormKey.currentState.validate()) {
-                          print("Account Details Validated!");
+                        ],
+                      );
+                    }:null,
+                    type: MyStepperType.horizontal,
+                    steps: _stepsList,
+                    currentStep: currentStep,
+                    onStepContinue: () {
+                      if(currentStep == 0) {
+                        if(passwordController.text == confirmPasswordController.text) {
+                          print("Next Page 1");
+                          if(_accountFormKey.currentState.validate()) {
+                            print("Account Details Validated!");
+                            next();
+                          }
+                        }
+                        else {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text("Error"),
+                                  content: Text("Passwords dont match, please try again!"),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      child: Text(
+                                        "OK",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      color: Data.primaryColor,
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              }
+                          );
+                        }
+                      }
+                      else if (currentStep == 1) {
+                        print("Next Page 2");
+                        if (_personalFormKey.currentState.validate()) {
+                          print("Personal Details Validated!");
                           next();
                         }
                       }
-                      else {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text("Error"),
-                                content: Text("Passwords dont match, please try again!"),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    child: Text(
-                                      "OK",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    color: Data.primaryColor,
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                  ),
-                                ],
-                              );
-                            }
-                        );
+                      else if (currentStep == 2) {
+                        print("Next Page 3");
+                        if (_collegeFormKey.currentState.validate()) {
+                          print("College Details Validated!");
+                          String email = emailController.text.trim();
+                          String password = passwordController.text;
+                          String name = nameController.text;
+                          String houseName = houseNameController.text;
+                          String fatherName = fatherNameController.text;
+                          String motherName = motherNameController.text;
+                          String dOB = dateController.text;
+                          String place = placeController.text;
+                          String district = districtDropdown;
+                          String bloodGroup = bloodGroupDropdown;
+                          String phone = phoneController.text;
+                          String whatsapp = whatsappController.text;
+                          String cic = cicController.text;
+                          String collegeName = collegeDropdown;
+                          String cicBatch = cicBatchController.text;
+                          FocusScope.of(context).unfocus();
+                          setState(() {
+                            _validating = true;
+                          });
+                          _addDataToFirebase(email,password,name,houseName,fatherName,motherName,dOB,place,district,bloodGroup,phone,whatsapp,cic,collegeName,cicBatch);
+                        }
                       }
-                    }
-                    else if (currentStep == 1) {
-                      print("Next Page 2");
-                      if (_personalFormKey.currentState.validate()) {
-                        print("Personal Details Validated!");
-                        next();
-                      }
-                    }
-                    else if (currentStep == 2) {
-                      print("Next Page 3");
-                      if (_collegeFormKey.currentState.validate()) {
-                        print("College Details Validated!");
-                        String email = emailController.text.trim();
-                        String password = passwordController.text;
-                        String name = nameController.text;
-                        String houseName = houseNameController.text;
-                        String fatherName = fatherNameController.text;
-                        String motherName = motherNameController.text;
-                        String dOB = dateController.text;
-                        String place = placeController.text;
-                        String district = districtDropdown;
-                        String bloodGroup = bloodGroupDropdown;
-                        String phone = phoneController.text;
-                        String whatsapp = whatsappController.text;
-                        String cic = cicController.text;
-                        String collegeName = collegeDropdown;
-                        String cicBatch = cicBatchController.text;
-                        FocusScope.of(context).unfocus();
-                        setState(() {
-                          _validating = true;
-                        });
-                        _addDataToFirebase(email,password,name,houseName,fatherName,motherName,dOB,place,district,bloodGroup,phone,whatsapp,cic,collegeName,cicBatch);
-                      }
-                    }
-                  },
-                  onStepTapped: (step) {
-                    goTo(step);
-                  },
-                  onStepCancel: () {
-                    cancel();
-                  },
+                    },
+                    onStepTapped: (step) {
+                      goTo(step);
+                    },
+                    onStepCancel: () {
+                      cancel();
+                    },
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
